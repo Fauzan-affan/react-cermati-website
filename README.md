@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Install All Dependencies
 
-## `npm install`
+### `npm install`
 
 Installing all dependencies for `react-cermati-website`
 
