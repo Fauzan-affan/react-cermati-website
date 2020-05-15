@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Install All Dependencies
+
+## `npm install`
+
+Installing all dependencies for `react-cermati-website`
+
 ## Available Scripts
 
 In the project directory, you can run:
