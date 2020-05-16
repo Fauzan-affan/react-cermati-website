@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 
 const Newsletter = ({buttonNews, handleButtonNews}) => {
+    console.log(localStorage.getItem("filledNewsletter"));
     
     window.addEventListener("scroll", () => {
-        if ((document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) && localStorage.getItem("filledNewsletter") === 'true') {
+        if ((document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) && localStorage.getItem("filledNewsletter") === 'false') {
             const el = document.querySelector(".newsletter");
             el.setAttribute("data-aos", "slide-down");
         }
@@ -12,7 +13,7 @@ const Newsletter = ({buttonNews, handleButtonNews}) => {
     return (
         <Fragment>
             {
-                buttonNews || localStorage.getItem("filledNewsletter") === 'true' ? <div className="newsletter hidden"></div> :
+                localStorage.getItem("filledNewsletter") === 'true' ? <div className="newsletter hidden"></div> :
                 <div className="newsletter fixed bottom-0 left-0 z-10 -mb-23 md:-mb-64">
                     <nav className="flex justify-end items-end w-full">
                         <button type="button" className="text-white pr-2" onClick={handleButtonNews}>x</button>

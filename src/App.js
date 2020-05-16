@@ -29,15 +29,14 @@ function App() {
     el.removeAttribute("data-aos");
     el.setAttribute("data-aos", "slide-up");
     setButtonNews(true);
+    localStorage.setItem("filledNewsletter", true);
   }
 
   useEffect(() => {
     Aos.init({
       duration: 1500,
     });
-
-    localStorage.setItem('filledNewsletter', buttonNews);
-  }, [buttonNews])
+  }, [])
 
   // Footer
   const [Tanggal] = useState(new Date().getFullYear());
