@@ -32,5 +32,10 @@
 
 .newsletter {
     max-width: 640px;
+    max-height: 370px;
     background: rgba(0, 123, 193, .8);
+    /* margin-bottom: -23rem; */
+    /* margin: 0 auto; */
+    /* overflow: hidden; */
+    /* transition: all 2s ease-in-out; */
 }

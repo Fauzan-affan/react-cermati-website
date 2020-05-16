@@ -1,13 +1,13 @@
 import React, {Fragment} from 'react';
 
-const Header = ({BgHeader, Logo, logoPosition}) => {
+const Header = ({BgHeader, Logo}) => {
 
     return (
         <Fragment>
-            <div className="h-screen w-full bg-cover bg-center flex justify-center items-center z-0" style={{backgroundImage: `url(${BgHeader})`}}>
+            <div id="header" className="h-screen w-full bg-cover bg-center flex justify-center items-center z-0" style={{backgroundImage: `url(${BgHeader})`}}>
                 <div className="color-overlay absolute h-full w-full bg-header opacity-75"></div>
                 <div className="max-width z-0">
-                    <div className={logoPosition}>
+                    <div className="absolute -mt-48 md:-mt-64 left-0 ml-6 z-10">
                         <a href="#Logo"><img src={Logo} alt="" className="w-20 h-20"/></a>
                     </div>
                     <div className="flex justify-center text-white z-10">

@@ -1,12 +1,11 @@
 import React, {Fragment} from 'react';
 
-const Footer = () => {
-    const d = new Date();
+const Footer = ({Tanggal}) => {
 
     return (
         <Fragment>
             <div className="relative flex justify-center items-center bg-footer py-10">
-                <p className="text-white text-center text-lg px-12">&copy; {d.getFullYear()} Fauzan Affan Zaki. All rights reserved.</p>
+                <p className="text-white text-center text-lg px-12">&copy; {Tanggal} Fauzan Affan Zaki. All rights reserved.</p>
             </div>
         </Fragment>
     );

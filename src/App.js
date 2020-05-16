@@ -1,11 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './styles/main.css';
 import BgHeader from './assets/work-desk__dustin-lee.jpg';
 import Logo from './assets/y-logo-white.png';
 
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 import Notification from './components/Notification.js';
 import Header from './components/Header.js';
 import Highlights from './components/Highlights.js';
+import Footer from './components/Footer';
+import Newsletter from './components/Newsletter.js';
 
 function App() {
 
@@ -13,25 +18,37 @@ function App() {
   const [buttonNotiv, setButtonNotiv] = useState(false);
   
   const handleButtonNotiv = () => {
-    setButtonNotiv(!buttonNotiv);
-    setLogoPosition("absolute top-0 left-0 mt-5 ml-10 z-10");
+    setButtonNotiv(true);
   }
-
-  // Header
-  const [logoPosition, setLogoPosition] = useState("absolute top-0 left-0 mt-32 ml-10 z-10");
 
   // Newsletter
   const [buttonNews, setButtonNews] = useState(false);
 
   const handleButtonNews = () => {
-    setButtonNews(!buttonNews);
+    const el = document.querySelector(".newsletter");
+    el.removeAttribute("data-aos");
+    el.setAttribute("data-aos", "slide-up");
+    setButtonNews(true);
   }
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1500,
+    });
+
+    localStorage.setItem('filledNewsletter', buttonNews);
+  }, [buttonNews])
+
+  // Footer
+  const [Tanggal] = useState(new Date().getFullYear());
 
   return (
     <div className="App">
       {<Notification buttonNotiv={buttonNotiv} handleButtonNotiv={handleButtonNotiv} />}
-      <Header BgHeader={BgHeader} Logo={Logo} logoPosition={logoPosition}/>
-      <Highlights buttonNews={buttonNews} handleButtonNews={handleButtonNews} />
+      <Header BgHeader={BgHeader} Logo={Logo} />
+      <Highlights />
+      <Footer Tanggal={Tanggal} />
+      <Newsletter buttonNews={buttonNews} handleButtonNews={handleButtonNews} />
     </div>
   );
 }

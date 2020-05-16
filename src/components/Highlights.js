@@ -1,10 +1,8 @@
 import React, {Fragment} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments, faPaintBrush, faCubes, faBullhorn, faTasks, faChartLine } from '@fortawesome/free-solid-svg-icons';
-import Footer from './Footer.js';
-import Newsletter from './Newsletter.js';
 
-const Highlights = ({buttonNews, handleButtonNews}) => {
+const Highlights = () => {
     return (
         <Fragment>
             <div className="relative">
@@ -106,9 +104,6 @@ const Highlights = ({buttonNews, handleButtonNews}) => {
                         </div>
                     </div>
                 </div>
-
-                <Footer />
-                <Newsletter buttonNews={buttonNews} handleButtonNews={handleButtonNews}/>
             </div>
         </Fragment>
     );
