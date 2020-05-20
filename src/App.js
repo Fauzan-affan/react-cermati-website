@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/main.css';
 import BgHeader from './assets/work-desk__dustin-lee.jpg';
 import Logo from './assets/y-logo-white.png';
@@ -16,7 +16,7 @@ function App() {
 
   // Notivicatioan
   const [buttonNotiv, setButtonNotiv] = useState(false);
-  
+
   const handleButtonNotiv = () => {
     setButtonNotiv(true);
   }
@@ -28,8 +28,7 @@ function App() {
     const el = document.querySelector(".newsletter");
     el.removeAttribute("data-aos");
     el.setAttribute("data-aos", "slide-up");
-    setButtonNews(true);
-    localStorage.setItem("filledNewsletter", true);
+    // setButtonNews(true);
   }
 
   useEffect(() => {
