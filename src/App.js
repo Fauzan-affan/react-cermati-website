@@ -22,7 +22,7 @@ function App() {
   }
 
   // Newsletter
-  const [buttonNews, setButtonNews] = useState(false);
+  const [buttonNews] = useState(false);
 
   const handleButtonNews = () => {
     const el = document.querySelector(".newsletter");
